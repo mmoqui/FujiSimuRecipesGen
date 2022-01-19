@@ -1,0 +1,11 @@
+# The Fujifilm camera
+camera: X-T4
+
+# The firmware of the camera
+firmware: 1.00
+
+# Serial number of the camera
+serialNb: 593536303034201113C58330314721
+
+# version of Fujifilm XRaw Studio
+xrfcVersion: 1.12.0.0

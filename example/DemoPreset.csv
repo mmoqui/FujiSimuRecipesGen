@@ -1,0 +1,168 @@
+Label,FilmSimulation,Grain,CCFx/CCFxB,WhiteBalance,WBShiftR,WBShiftB,DynamicRange,HighlightTone,ShadowTone,Color,Sharpness,NoisReduction,ExposureBias
+EM Acros,Acros,OFF,OFF,Auto,0,0,200,2,2,0,2,-2,0
+JC Acros 2,Acros,OFF,OFF,Auto,1,0,200,2,2,0,2,-2,0
+JP Acros,Acros,WEAK,OFF,Auto,0,0,AUTO,1,0,0,0,-4,0
+MT Acros,Acros,OFF,OFF,Auto,0,0,100,-2,0,0,0,0,0
+PE Winogrand,Acros,OFF,OFF,Auto,0,0,AUTO,-2,-2,0,-1,-3,0
+RR Acros,Acros,OFF,OFF,Auto,0,0,200,2,2,0,2,-2,P1P00
+RR Acros Agfa APX 400,Acros,WEAK,STRONG/OFF,Auto,1,0,400,-2,4,0,4,-4,P0P67
+RR Acros Push Process,Acros,STRONG,OFF,Auto,0,0,200,4,3,0,1,-3,P1P00
+RR Agfa Scala,Acros,WEAK,OFF,Auto,0,0,100,4,0,0,0,-3,0
+RR Bleach Bypass 2/2,Acros,STRONG,STRONG/OFF,Auto,-1,3,200,3,4,2,1,-4,P0P33
+RR Cyanotype,Acros,STRONG,OFF,Auto,-9,0,400,3,3,0,-4,-4,P0P33
+RR Faded Color Vintage 2/2,Acros,WEAK,STRONG/OFF,Auto,-5,5,200,4,4,4,1,-4,M1P00
+RR Faded Monochrome,Acros,STRONG,STRONG/OFF,Auto,0,0,100,4,4,0,2,-4,P0P33
+RR Ilford HP-5+,Acros,STRONG,OFF,Auto,0,0,200,4,2,0,0,-3,0
+RR Ilford HP-5+ Push Process,Acros,STRONG,STRONG/OFF,Auto,0,0,AUTO,3,4,0,-2,-4,P0P33
+RR Split-Tones B&W 1/2,Acros,WEAK,STRONG/OFF,Auto,6,0,200,4,4,0,1,-4,P0P67
+RR Tri-X Push Process,Acros,OFF,OFF,Auto,0,0,200,3,4,0,-1,-4,P0P33
+VM Across,Acros,OFF,OFF,Auto,0,0,100,0,1,0,1,-4,0
+VM Double A,Acros,OFF,OFF,Auto,0,0,200,-2,-1,0,-1,-4,0
+BLP Ilford Delta 3200,AcrosG,STRONG,OFF,Auto,0,0,400,-2,4,0,-2,-4,M0M33
+BT Goto BW,AcrosG,WEAK,OFF,Auto,0,0,AUTO,-2,2,0,2,-2,0
+DC Acros,AcrosG,OFF,OFF,Auto,0,0,AUTO,-1,3,0,1,-4,0
+KM Portrait,AcrosG,OFF,OFF,Auto,0,0,AUTO,-1,2,0,0,-1,0
+SS Acros,AcrosG,WEAK,OFF,Auto,0,0,AUTO,-2,2,0,2,-2,0
+BT Acros Street Photography,AcrosR,OFF,OFF,Auto,0,0,100,4,4,0,2,-1,0
+BT Acros Travel,AcrosR,OFF,OFF,Auto,0,0,100,4,4,0,2,-4,0
+GB BW Hard,AcrosR,WEAK,OFF,Auto,0,0,100,-1,2,0,2,-1,0
+GB Oh Sh*t ,AcrosR,WEAK,OFF,Daylight,-2,1,200,-2,-1,0,1,-4,0
+HH Fuji Acros,AcrosR,OFF,OFF,Auto,0,0,AUTO,0,3,0,1,-2,0
+HH Fuji Acros Grain Like,AcrosR,OFF,OFF,Auto,0,0,AUTO,-1,3,0,1,-3,0
+JC Acros 1R,AcrosR,OFF,OFF,Auto,1,0,AUTO,-1,3,0,1,-1,0
+KM Day,AcrosR,OFF,OFF,Auto,0,0,AUTO,-1,2,0,1,-1,0
+LC Tri-X,AcrosR,OFF,OFF,Auto,0,0,200,3,4,0,-1,-4,P0P33
+PE Moriyama,AcrosR,OFF,OFF,Auto,0,0,100,4,4,0,-1,-3,0
+PLR Acros,AcrosR,STRONG,OFF,Auto,0,0,AUTO,-1,3,0,0,0,0
+RR Kodachrome Monochrome,AcrosR,STRONG,OFF,Auto,0,9,200,4,-2,0,1,-4,0
+BLP Kodak Panatomic,AcrosY,OFF,OFF,Auto,0,0,100,3,3,0,2,-1,M0M33
+KM Night,AcrosY,OFF,OFF,Auto,0,0,AUTO,0,1,0,0,-2,0
+PE Acros Ellen Mark,AcrosY,OFF,OFF,Auto,0,0,AUTO,2,0,0,-1,-3,0
+GB Portrait,Astia,OFF,OFF,Auto,0,0,100,2,2,0,1,0,0
+JC Astia Travel,Astia,OFF,OFF,Auto,1,0,AUTO,-1,2,2,-1,-3,0
+JP Flat Landscape,Astia,OFF,OFF,5300K,0,0,200,-1,0,-1,0,-2,0
+JP Travel,Astia,WEAK,OFF,Auto,0,0,AUTO,-1,1,0,-2,-3,0
+MT Astia,Astia,OFF,OFF,Auto,2,0,WEAK,0,0,-4,0,0,0
+NZD Classic Chrome,Astia,WEAK,OFF,Auto,0,0,AUTO,1,-2,1,-1,-2,0
+NZD Ektar 100,Astia,WEAK,OFF,Auto,0,0,AUTO,1,1,2,1,-2,0
+PS Kodak Ektar 100,Astia,OFF,OFF,5900K,-1,3,AUTO,0,1,3,0,-4,0
+RR Astia,Astia,WEAK,OFF,Auto,0,0,200,-1,-2,1,1,-3,P0P33
+RR Kodak Ektar 100,Astia,OFF,OFF,Auto,3,-2,AUTO,1,3,4,1,-3,0
+RR Redscale,Astia,STRONG,STRONG/OFF,10000K,9,0,200,1,2,-2,-2,-4,0
+VM Astia,Astia,WEAK,OFF,Auto,0,-1,100,-1,-1,-1,0,-4,0
+VM Astia Fujipro Color Cast,Astia,OFF,OFF,Auto,-2,-3,400,-1,-1,-2,-2,4,P0P67
+VM P160,Astia,WEAK,OFF,Auto,6,-3,200,-2,-1,-3,-2,-4,P0P33
+DC Classic Chrome I,Classic,OFF,OFF,Auto,0,0,200,-1,0,2,2,-2,0
+DC Classic Chrome II,Classic,OFF,OFF,Auto,0,0,100,0,0,3,0,-3,0
+EM Cross Process,Classic,WEAK,OFF,Auto,-3,-8,200,1,2,-1,1,-3,0
+ER Bleach Bypass,Classic,OFF,OFF,Auto,0,0,AUTO,1,4,-4,0,-2,0
+GB Chrome,Classic,OFF,OFF,Auto,0,0,100,-1,2,-1,1,0,0
+GB Chrome Colour,Classic,OFF,STRONG/OFF,Auto,0,0,100,-2,2,0,2,0,0
+GB Classy Chrome,Classic,WEAK,WEAK/STRONG,Daylight,0,0,400,-1,-1,0,0,-4,0
+HF Muted Color,Classic,OFF,OFF,Auto,0,0,AUTO,2,0,-2,0,0,0
+JC Chrome Urban,Classic,OFF,OFF,Auto,1,0,AUTO,0,2,3,3,-3,0
+JP Chrome Travel,Classic,WEAK,OFF,Auto,0,0,AUTO,-2,1,3,-2,-4,0
+KM Street,Classic,OFF,OFF,Auto,0,0,AUTO,-1,2,-1,1,0,0
+LC Color,Classic,STRONG L,OFF/WEAK,Auto,4,-4,200,1,0,3,0,-4,M0M33
+LC Color,Classic,OFF,OFF,Auto,4,-5,200,1,1,3,0,-4,M0M33
+MT Classic Chrome,Classic,OFF,STRONG/OFF,Auto,0,0,STRONG,0,0,-1,0,0,0
+PE Chrome Eggleston,Classic,OFF,OFF,Auto,0,0,AUTO,2,2,-2,-1,-3,0
+PS Kodak Portra 160,Classic,OFF,OFF,FLight1,-1,-1,AUTO,-2,0,2,-2,-2,P1P00
+RR Agfacolor Vintage,Classic,STRONG,OFF,Auto,-3,-4,AUTO,2,1,-4,0,-3,M0M33
+RR Bleach Bypass 1/2,Classic,STRONG,STRONG/OFF,Auto,-1,3,200,3,4,2,1,-4,P0P33
+RR Classic Chrome,Classic,WEAK,OFF,Auto,1,-1,200,-1,1,2,2,-2,P0P67
+RR Classic Slide,Classic,WEAK,OFF,Daylight,-2,3,400,1,2,0,1,-4,P0P67
+RR Cross Process,Classic,WEAK,OFF,7700K,-8,-3,400,4,-1,3,1,-4,M0M33
+RR Dramatic Classic Chrome,Classic,STRONG,OFF,Auto,-1,1,AUTO,3,3,0,1,-3,P0P33
+RR Elite Chrome 200 Color Fade,Classic,STRONG,STRONG/OFF,8300K,4,8,200,0,2,-2,-4,2,0
+RR Faded Color,Classic,STRONG,STRONG/OFF,Auto,0,0,100,3,4,4,2,-4,P0P33
+RR Kodachrome 64,Classic,WEAK,WEAK/OFF,Daylight,2,-5,400,1,2,0,2,-4,P0P33
+RR Kodachrome II,Classic,WEAK,OFF,Auto,3,-4,200,1,2,-1,1,-3,P0P33
+RR Kodachrome Vintage,Classic,STRONG,OFF,Auto,2,-4,200,4,-2,4,1,-3,M0M33
+RR Kodacolor,Classic,STRONG,OFF,6300K,-1,-4,400,-1,2,-2,2,-4,P0P67
+RR Kodacolor II 160,Classic,STRONG,STRONG/OFF,6300K,6,3,200,-1,3,-4,-4,-4,P0P67
+RR Kodacolor S. Shore,Classic,STRONG,OFF,6300K,-1,-4,400,-1,2,0,2,-4,P0P67
+RR Kodak Gold 200,Classic,STRONG,OFF,Daylight,4,-5,AUTO,-2,1,3,-2,-4,P1P00
+RR Kodak Porta 400,Classic,STRONG,OFF,Auto,2,-5,400,-1,2,-2,1,-3,P1P00
+RR Kodak Portra 160,Classic,WEAK,OFF,Daylight,4,-5,AUTO,-2,-2,1,-2,-4,P1P00
+RR Urban Vintage Chrome,Classic,WEAK,OFF,4300K,-1,-3,200,0,2,-4,0,-4,P0P33
+RS Kodacolor II 126,Classic,STRONG,STRONG/OFF,6300K,6,3,200,-1,3,-4,-4,-4,P0P67
+RS Kodak Portra 400,Classic,STRONG,STRONG/OFF,Daylight,4,-5,AUTO,-1,-1,2,-2,-4,P0P67
+RS Kodak Portra 400,Classic,STRONG,OFF,Daylight,4,-5,AUTO,-1,-1,2,-2,-4,P0P67
+VM Classic Chrome,Classic,OFF,OFF,Auto,0,-1,200,1,2,2,-2,-2,0
+VM K14,Classic,WEAK,OFF,Auto,0,-2,100,-1,0,-4,3,-4,0
+GB Classy Neg,ClassicNEGA,WEAK,OFF/STRONG,Auto,0,0,400,-2,-2,2,1,-4,0
+PLR Classic Nrg,ClassicNEGA,OFF,OFF,Auto,0,0,AUTO,-2,-2,0,0,0,0
+GB The Cinema,Eterna,STRONG L,WEAK/WEAK,Auto,0,0,100,1,2,2,1,-2,0
+MT Eterna,Eterna,OFF,OFF,Auto,2,-1,400,0,0,0,0,0,0
+RR Eterna,Eterna,STRONG,WEAK/OFF,Auto,5,-6,100,4,4,4,2,-4,0
+RR Eterna Expired,Eterna,STRONG,WEAK/OFF,Auto,5,5,100,4,4,4,-2,-4,0
+RR Eterna Low Contrast,Eterna,STRONG,STRONG/OFF,5900K,-3,3,200,-2,-1,4,-4,-4,P0P33
+RR Polaroid,Eterna,STRONG,OFF,Auto,5,-5,400,4,-2,-2,-1,-4,P1P00
+RR Polaroid Film,Eterna,STRONG,STRONG/OFF,Shade,4,6,100,4,4,-3,-4,-4,M1P00
+RS Kodak Vision3 250D,Eterna,STRONG,STRONG/OFF,FLight1,-3,-1,100,3,4,3,-2,-4,P0P33
+VM Eterna,Eterna,WEAK,OFF,Auto,0,-1,200,1,3,3,2,-4,P0P33
+GB Big Softy,NEGA,WEAK,OFF,Auto,0,0,100,-1,0,-2,0,-2,0
+JC Superia 800,NEGA,WEAK,OFF,Daylight,-2,-3,200,1,2,4,1,-1,0
+JP Hard Portrait,NEGA,OFF,OFF,Auto,0,0,100,0,0,-4,0,-2,0
+JP Soft Portrait,NEGA,OFF,OFF,Auto,0,0,AUTO,0,0,-1,-2,-2,0
+MT Pro Neg Hich I,NEGA,OFF,STRONG/OFF,Auto,2,-1,WEAK,0,0,0,0,0,0
+NZD Fuji Superia 800,NEGA,STRONG,OFF,Auto,0,0,200,0,1,2,1,-2,0
+PE Pro Neg LaRoque,NEGA,WEAK,OFF,Auto,0,0,AUTO,-2,-2,-1,-4,-3,0
+PS Pro 400H,NEGA,OFF,OFF,Auto,1,-3,AUTO,-2,0,1,-1,0,P1P00
+RR Aged Color,NEGA,STRONG,OFF,Auto,5,-3,400,2,3,4,0,-3,P0P33
+RR Analog Color,NEGA,STRONG,STRONG/OFF,Daylight,-3,1,200,3,0,-1,1,-4,P0P67
+RR CineStill 800T,NEGA,STRONG,OFF,3200K,0,0,200,3,1,-1,1,-3,P0P33
+RR Classic Negative,NEGA,WEAK,OFF,6700K,-2,7,400,3,2,-3,1,-4,0
+RR Eterna,NEGA,WEAK,OFF,Auto,2,2,400,-2,-1,-4,1,-4,P1P00
+RR Fujicolor 100 Industrial,NEGA,WEAK,WEAK/OFF,3200K,8,-8,400,1,2,1,2,-4,P0P33
+RR Fujicolor Pro 400H,NEGA,WEAK,OFF,Auto,2,1,200,0,3,4,0,-3,P0P67
+RR Superia 800,NEGA,STRONG,OFF,Auto,-2,-3,200,1,2,4,1,-3,P0P67
+RR Warm Contrast,NEGA,STRONG,OFF,Auto,-2,-4,200,1,3,4,1,-4,P0P33
+MT Monochrome,BW,OFF,OFF,Auto,0,0,100,-2,0,0,0,0,0
+RR Dramatic Monochrome,BW,STRONG,STRONG/OFF,Auto,0,0,200,4,4,0,3,-4,P0P67
+NZD Ilford HP-5,BG,STRONG,OFF,Auto,0,0,200,2,1,0,0,-2,0
+HF BW,BR,OFF,OFF,Auto,0,0,AUTO,1,2,0,1,-2,0
+KM Padilla,BR,STRONG,OFF,Auto,0,0,AUTO,0,3,0,1,0,0
+NZD Tri-X,BR,STRONG,OFF,Auto,0,0,200,1,2,0,1,0,0
+VM Classic Contrast,BR,WEAK,OFF,Auto,0,0,100,2,1,0,2,-4,0
+VM Monochrome R,BR,WEAK,OFF,Auto,0,0,100,0,3,0,1,-4,0
+NZD Acros,BYe,WEAK,OFF,Auto,0,0,100,0,1,0,1,-1,0
+GB Muted,NEGAhi,WEAK,OFF,Auto,0,0,100,-1,2,-2,0,-2,0
+JC Pro Port,NEGAhi,WEAK,OFF,Auto,1,0,AUTO,-2,2,-3,1,-2,0
+KM Meyerowitz,NEGAhi,WEAK,OFF,Auto,0,0,AUTO,-1,1,-2,1,-2,0
+MT Pro Neg Hich II,NEGAhi,OFF,STRONG/OFF,Auto,2,-1,WEAK,0,0,0,0,0,0
+NZD Portra 400,NEGAhi,WEAK,OFF,Auto,0,0,200,-1,1,-2,1,-2,0
+PS Fujifilm Superia 100,NEGAhi,WEAK,OFF,UWater,-1,-3,200,-2,2,2,-2,0,P1P00
+PS Kodak Gold 200,NEGAhi,OFF,OFF,FLight1,4,-3,100,-2,-1,1,-2,0,P1P00
+RR Classic Negative,NEGAhi,WEAK,OFF,FLight1,-2,4,400,2,2,-2,1,-4,P0P67
+RR Faded Color Vintage 1/2,NEGAhi,WEAK,STRONG/OFF,Auto,-5,5,200,4,4,4,1,-4,P0P67
+RR Jeff Davenport Night,NEGAhi,WEAK,STRONG/OFF,2650K,-1,4,400,1,0,2,1,-4,0
+RR Pro Neg HI,NEGAhi,WEAK,OFF,Auto,0,0,200,-1,-1,1,1,-3,P0P33
+VM Pro Neg High,NEGAhi,OFF,OFF,Auto,0,-1,100,0,-1,2,1,-2,0
+VM VintageK,NEGAhi,WEAK,OFF,Auto,3,-2,100,1,0,-4,-4,-4,0
+VM Vision; Film 500 Daylight,NEGAhi,WEAK,OFF,Auto,0,-3,200,0,-2,0,-1,-4,0
+GB Balan Colour,Provia,WEAK,OFF/WEAK,Auto,0,0,400,-1,-1,0,1,-4,0
+MT Provia,Provia,OFF,WEAK/OFF,Auto,1,0,WEAK,0,0,-1,0,0,0
+PE Provia Sternfeld,Provia,OFF,OFF,Auto,0,0,AUTO,-2,-1,-3,-1,-3,0
+RR Agfa Optima,Provia,WEAK,OFF,Auto,-1,-1,100,-2,2,-2,0,-3,P0P67
+RR Cross Process,Provia,STRONG,OFF,Auto,-3,-8,200,2,3,4,0,-3,P0P67
+RR Fujichrome Sensia 100,Provia,WEAK,OFF,FLight2,-1,-3,400,0,2,0,1,-4,P0P67
+RR Fujicolor Pro 400H OverExposed,Provia,WEAK,OFF,Auto,2,2,400,-2,4,1,1,-4,P1P00
+MT Monochrome Sepia,Sepia,STRONG,OFF,Auto,0,0,STRONG,0,0,0,-4,4,0
+BT Velvia Travel,Velvia,OFF,OFF,Auto,0,0,AUTO,0,3,1,1,-2,0
+GB Colour,Velvia,OFF,OFF,Auto,0,0,100,-1,2,2,2,-1,0
+GB Taste Rainbows,Velvia,OFF,OFF,Daylight,0,0,400,0,2,2,1,-4,0
+HF Vibrant Color,Velvia,OFF,OFF,Auto,0,0,AUTO,-1,2,2,1,0,0
+JC Velvia LS,Velvia,OFF,OFF,Auto,1,0,AUTO,-1,3,4,2,-1,0
+JP Bright Landscape,Velvia,OFF,OFF,5000K,0,0,AUTO,1,1,2,0,-2,0
+KM Martin Parr,Velvia,OFF,OFF,Auto,0,0,AUTO,-1,2,2,2,-1,0
+MT Velvia,Velvia,OFF,WEAK/OFF,Auto,2,0,STRONG,0,0,-4,0,0,0
+PE Velvia Bulmer,Velvia,WEAK,OFF,Auto,0,0,AUTO,-2,2,-2,-1,-3,0
+RR Ektachrome 100SW,Velvia,WEAK,OFF,Auto,3,-4,200,1,2,-1,0,-3,P0P33
+RR Lomography Color 100,Velvia,WEAK,WEAK/OFF,Shade,-3,7,400,1,1,-3,1,-4,P0P33
+RR Split-Tones B&W 2/2,Velvia,WEAK,STRONG/OFF,Auto,0,0,200,4,4,2,1,-4,M1P00
+RR Velvia,Velvia,WEAK,OFF,Auto,1,-1,200,-1,0,2,2,-2,P0P67
+RR Velvia,Velvia,WEAK,STRONG/OFF,Auto,1,-1,AUTO,0,1,3,2,-4,M0M33
+VM Valvia Fujipro Color Cast,Velvia,OFF,OFF,Auto,-2,-3,400,-2,-1,-4,-2,4,P0P67
+VM Velvia,Velvia,OFF,OFF,Auto,0,-1,100,0,-1,2,2,-4,0
