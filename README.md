@@ -51,7 +51,7 @@ made:
   FujiSimuRecipesGen -s mySettings.yaml -csv mySpreadsheetsWithTheRecipes.csv
 ```
 
-* the FP1 film simulations will be generated in the folder from which the program has been executed.
+* the FP1 film simulations will be generated in the folder indicated in the `mySettings.yaml` file.
 
 ### Build for all supported systems
 
