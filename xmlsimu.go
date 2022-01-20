@@ -2,20 +2,15 @@ package main
 
 import (
 	"encoding/xml"
+	"errors"
 	"fmt"
-	"gopkg.in/yaml.v3"
+	"github.com/creasty/defaults"
 	"io/ioutil"
 	"log"
+	"os"
+	"path/filepath"
 	"strings"
-	"github.com/creasty/defaults"
 )
-
-type UserSettings struct {
-	CameraModel     string `yaml:"camera"`
-	FirmwareVersion string `yaml:"firmware"`
-	SerialNumber    int    `yaml:"serialNb"`
-	XRawStudioVersion string `yaml:"xrfcVersion"`
-}
 
 type FujifilmSimulation struct {
 	XMLName       xml.Name              `xml:"ConversionProfile"`
@@ -25,21 +20,21 @@ type FujifilmSimulation struct {
 }
 
 type SimulationProperties struct {
-	Device                 string   `xml:"device,attr"`
-	Version                string   `xml:"version,attr"`
-	Label                  string   `xml:"label,attr"`
-	SerialNumber           int      `xml:"SerialNumber"`
-	TetherRAWConditionCode string   `xml:"TetherRAWConditonCode"`
-	Editable               string   `xml:"Editable" default:"TRUE"`
-	SourceFileName         string   `xml:"SourceFileName"`
-	FileError              string   `xml:"Fileerror" default:"NONE"`
-	RotationAngle          int8     `xml:"RotationAngle" default:"0"`
-	StructVer              int      `xml:"StructVer" default:"65536"`
-	IOPCode                string   `xml:"IOPCode" default:"FF129506"`
-	ShootingCondition      string   `xml:"ShootingCondition" default:"OFF"`
-	FileType               string   `xml:"FileType" default:"JPG"`
-	ImageSize              string   `xml:"ImageSize" default:"L3x2"`
-	ImageQuality           string   `xml:"ImageQuality" default:"Fine"`
+	Device                 string `xml:"device,attr"`
+	Version                string `xml:"version,attr"`
+	Label                  string `xml:"label,attr"`
+	SerialNumber           int    `xml:"CameraSerialNumber"`
+	TetherRAWConditionCode string `xml:"TetherRAWConditonCode"`
+	Editable               string `xml:"Editable" default:"TRUE"`
+	SourceFileName         string `xml:"SourceFileName"`
+	FileError              string `xml:"Fileerror" default:"NONE"`
+	RotationAngle          int8   `xml:"RotationAngle" default:"0"`
+	StructVer              int    `xml:"StructVer" default:"65536"`
+	IOPCode                string `xml:"IOPCode" default:"FF159505"`
+	ShootingCondition      string `xml:"ShootingCondition" default:"OFF"`
+	FileType               string `xml:"FileType" default:"JPG"`
+	ImageSize              string `xml:"ImageSize" default:"L3x2"`
+	ImageQuality           string `xml:"ImageQuality" default:"Fine"`
 	ExposureBias           string   `xml:"ExposureBias" default:"0"`
 	DynamicRange           string   `xml:"DynamicRange"`
 	WideDRange             int8     `xml:"WideDRange" default:"0"`
@@ -63,28 +58,21 @@ type SimulationProperties struct {
 	Clarity                int8     `xml:"Clarity" default:"0"`
 	LensModulationOpt      string   `xml:"LensModulationOpt" default:"ON"`
 	ColorSpace             string   `xml:"ColorSpace" default:"sRGB"`
-	HDR                    string   `xml:"HDR" default:""`
+	HDR                    string   `xml:"HDR"`
 	DigitalTeleConv        string   `xml:"DigitalTeleConv" default:"OFF"`
 }
 
-func loadUserSettings(settingsPath *string) UserSettings {
-	settingsFile, err := ioutil.ReadFile(*settingsPath)
-	if err != nil {
-		log.Fatal(err)
-	}
-	var settings UserSettings
-	yaml.Unmarshal(settingsFile, &settings)
-	return settings
-}
-
 func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRecipe) {
-	var camera = settings.CameraModel + "_" + flatVersion(settings.FirmwareVersion)
-	fmt.Printf("Number of simulation to generate: %d\n", len(recipes))
+	var camera = settings.Camera.Model + "_" + flatVersion(settings.Camera.FirmwareVersion)
+	fmt.Printf("The film simulations will be generated into the folder '%s'\n", settings.XRawStudio.FP1Path)
+	fmt.Printf("Number of film simulation to generate: %d\n", len(recipes))
+
+	createRecursivelyDirectory(settings.XRawStudio.FP1Path)
 
 	for _, recipe := range recipes {
-		fmt.Printf("Generate simulation %s...",recipe.Label)
+		fmt.Printf("Generate film simulation %s...", recipe.Label)
 		simulation := &FujifilmSimulation{
-			Version: settings.XRawStudioVersion,
+			Version: settings.XRawStudio.Version,
 		}
 		err1 := defaults.Set(simulation)
 		if err1 != nil {
@@ -92,10 +80,10 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 		}
 
 		properties := &SimulationProperties{
-			Device:                 settings.CameraModel,
+			Device:                 settings.Camera.Model,
 			Version:                camera,
 			Label:                  recipe.Label,
-			SerialNumber:           settings.SerialNumber,
+			SerialNumber:           settings.Camera.SerialNumber,
 			TetherRAWConditionCode: camera,
 			DynamicRange:           recipe.DynamicRange,
 			FilmSimulation:         recipe.FilmSimulation,
@@ -119,17 +107,36 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 		simulation.PropertyGroup = properties
 
 		xmlSimulation, err := xml.MarshalIndent(simulation, " ", "  ")
+		xmlSimulation = []byte(xml.Header + string(xmlSimulation))
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		var fileName = strings.ReplaceAll(strings.ReplaceAll(recipe.Label, "/", "_"), "\\", "_")
-		err = ioutil.WriteFile(fileName+".FP1", xmlSimulation, 0644)
+		var fp1Name = normalizeFileName(recipe.Label)
+		var fp1Path = filepath.Join(settings.XRawStudio.FP1Path, fp1Name+".FP1")
+		err = ioutil.WriteFile(fp1Path, xmlSimulation, 0644)
 		if err != nil {
 			fmt.Println(" FAILED")
 			log.Fatal(err)
 		}
 		fmt.Println(" OK")
+	}
+}
+
+func normalizeFileName(fileName string) string {
+	return strings.ReplaceAll(
+		strings.ReplaceAll(
+			strings.ReplaceAll(fileName, "/", "_"),
+			"\\", "_"), // for Unix system like MacOS X
+		"*", "_")
+}
+
+func createRecursivelyDirectory(path string) {
+	if _, err := os.Stat(path); errors.Is(err, os.ErrNotExist) {
+		err := os.MkdirAll(path, os.ModePerm)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 }
 
