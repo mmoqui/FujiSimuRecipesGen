@@ -5,8 +5,7 @@ A lot of persons write their recipes of Fujifilm film simulation within a spread
 [Fuji X Weekly](https://fujixweekly.com/). Then, they set themselves the properties of the recipe either directly into their own Fujifilm camera or
 via the Fujifilm X-Raw Studio tool to create a custom film simulation in the camera.
 
-The `FujiSimuRecipesGen` program aims to automatically generate Fujifilm simulations in FP1 format from such a spreadsheet. These FP1 files then can be 
-copied or moved into the location of the film simulations for Fujifilm X-Raw Studio so that you can transfer them directly to your camera with the Fujifilm tool.
+The `FujiSimuRecipesGen` program aims to automatically generate Fujifilm simulations in FP1 format from such a spreadsheet. These FP1 files are generated into the folder specified in a user settings file. Those FP1 files can be then copied or moved into the location of the film simulations for Fujifilm X-Raw Studio so that you can transfer them directly to your camera with the Fujifilm tool (unless they are directly generated into this location).
 
 ## Information
 
