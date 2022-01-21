@@ -28,9 +28,9 @@ To know the required properties, please look at `example/settings.yaml` file.
 Just download the executable from the `build` directory that matches your operating system. Currently, the following are
 made:
 
-* For windows
-* For MacOSX
-* For GNU/Linux
+* [For windows](https://github.com/mmoqui/FujiSimuRecipesGen/raw/main/build/windows/FujiSimuRecipesGen)
+* [For MacOSX](https://github.com/mmoqui/FujiSimuRecipesGen/raw/main/build/macosx/FujiSimuRecipesGen)
+* [For GNU/Linux](https://github.com/mmoqui/FujiSimuRecipesGen/raw/main/build/linux/FujiSimuRecipesGen)
 
 ## How to build
 
