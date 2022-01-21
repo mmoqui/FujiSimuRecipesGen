@@ -6,7 +6,7 @@ linux:
 	GOOS=linux GOARCH=amd64 go build -o build/linux/${BINARY}
 
 windows:
-	GOOS=windows GOARCH=amd64 go build -o build/windows/${BINARY}
+	GOOS=windows GOARCH=amd64 go build -o build/windows/${BINARY}.exe
 
 macosx:
 	GOOS=darwin GOARCH=amd64 go build -o build/macosx/${BINARY}
@@ -14,5 +14,5 @@ macosx:
 clean:
 	go clean
 	rm -f build/linux/${BINARY}
-	rm -f build/windows/${BINARY}
+	rm -f build/windows/${BINARY}.exe
 	rm -f build/macosx/${BINARY}
