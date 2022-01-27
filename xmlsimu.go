@@ -35,31 +35,31 @@ type SimulationProperties struct {
 	FileType               string `xml:"FileType" default:"JPG"`
 	ImageSize              string `xml:"ImageSize" default:"L3x2"`
 	ImageQuality           string `xml:"ImageQuality" default:"Fine"`
-	ExposureBias           string   `xml:"ExposureBias" default:"0"`
-	DynamicRange           string   `xml:"DynamicRange"`
-	WideDRange             int8     `xml:"WideDRange" default:"0"`
-	FilmSimulation         string   `xml:"FilmSimulation"`
-	BlackImageTone         int8     `xml:"BlackImageTone" default:"0"`
-	MonochromaticColorRG   int8     `xml:"MonochromaticColorRG" default:"0"`
-	GrainEffect            string   `xml:"GrainEffect"`
-	GrainEffectSize        string   `xml:"GrainEffectSize"`
-	ChromeEffect           string   `xml:"ChromeEffect"`
-	ColorChromeBlue        string   `xml:"ColorChromeBlue"`
-	SmoothSkinEffect       string   `xml:"SmoothSkinEffect" default:"OFF"`
-	WBShootCond            string   `xml:"WBShootCond" default:"OFF"`
-	WhiteBalance           string   `xml:"WhiteBalance"`
-	WBShiftR               int8     `xml:"WBShiftR"`
-	WBShiftB               int8     `xml:"WBShiftB"`
-	WBColorTemp            string   `xml:"WBColorTemp" default:"10000K"`
-	HighlightTone          int8     `xml:"HighlightTone"`
-	Color                  int8     `xml:"Color"`
-	Sharpness              int8     `xml:"Sharpness"`
-	NoiseReduction         int8     `xml:"NoisReduction"`
-	Clarity                int8     `xml:"Clarity" default:"0"`
-	LensModulationOpt      string   `xml:"LensModulationOpt" default:"ON"`
-	ColorSpace             string   `xml:"ColorSpace" default:"sRGB"`
-	HDR                    string   `xml:"HDR"`
-	DigitalTeleConv        string   `xml:"DigitalTeleConv" default:"OFF"`
+	ExposureBias           string `xml:"ExposureBias" default:"0"`
+	DynamicRange           string `xml:"DynamicRange"`
+	WideDRange             int8   `xml:"WideDRange" default:"0"`
+	FilmSimulation         string `xml:"FilmSimulation"`
+	BlackImageTone         int8   `xml:"BlackImageTone" default:"0"`
+	MonochromaticColorRG   int8   `xml:"MonochromaticColorRG" default:"0"`
+	GrainEffect            string `xml:"GrainEffect"`
+	GrainEffectSize        string `xml:"GrainEffectSize"`
+	ChromeEffect           string `xml:"ChromeEffect"`
+	ColorChromeBlue        string `xml:"ColorChromeBlue"`
+	SmoothSkinEffect       string `xml:"SmoothSkinEffect" default:"OFF"`
+	WBShootCond            string `xml:"WBShootCond" default:"OFF"`
+	WhiteBalance           string `xml:"WhiteBalance" default:"Temperature"`
+	WBShiftR               int8   `xml:"WBShiftR"`
+	WBShiftB               int8   `xml:"WBShiftB"`
+	WBColorTemp            string `xml:"WBColorTemp" default:"10000K"`
+	HighlightTone          int8   `xml:"HighlightTone"`
+	Color                  int8   `xml:"Color"`
+	Sharpness              int8   `xml:"Sharpness"`
+	NoiseReduction         int8   `xml:"NoisReduction"`
+	Clarity                int8   `xml:"Clarity" default:"0"`
+	LensModulationOpt      string `xml:"LensModulationOpt" default:"ON"`
+	ColorSpace             string `xml:"ColorSpace" default:"sRGB"`
+	HDR                    string `xml:"HDR"`
+	DigitalTeleConv        string `xml:"DigitalTeleConv" default:"OFF"`
 }
 
 func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRecipe) {
@@ -79,6 +79,7 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 			log.Fatal(err1)
 		}
 
+		whiteBalance, colorTemp := findColorTemp(recipe.WhiteBalance)
 		properties := &SimulationProperties{
 			Device:                 settings.Camera.Model,
 			Version:                camera,
@@ -91,13 +92,15 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 			GrainEffectSize:        computeGrainEffectSize(recipe.Grain),
 			ChromeEffect:           recipe.CCFx,
 			ColorChromeBlue:        normalizeCCFxB(recipe.CCFx, recipe.CCFxB),
-			WhiteBalance:           recipe.WhiteBalance,
+			WhiteBalance:           whiteBalance,
+			WBColorTemp:            colorTemp,
 			WBShiftR:               recipe.WBShiftR,
 			WBShiftB:               recipe.WBShiftB,
 			HighlightTone:          recipe.HighlightTone,
 			Color:                  recipe.Color,
 			Sharpness:              recipe.Sharpness,
 			NoiseReduction:         recipe.NoiseReduction,
+			ColorSpace:             settings.ColorSpace,
 		}
 		err2 := defaults.Set(properties)
 		if err2 != nil {
@@ -121,6 +124,14 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 		}
 		fmt.Println(" OK")
 	}
+}
+
+func findColorTemp(whiteBalance string) (string, string) {
+	lastChar := whiteBalance[(len(whiteBalance) - 1):]
+	if lastChar == "K" {
+		return "Temperature", whiteBalance
+	}
+	return whiteBalance, "10000K"
 }
 
 func normalizeFileName(fileName string) string {

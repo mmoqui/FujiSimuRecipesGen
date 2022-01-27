@@ -20,6 +20,7 @@ type XRawStudioSettings struct {
 type UserSettings struct {
 	Camera     CameraSettings     `yaml:"camera"`
 	XRawStudio XRawStudioSettings `yaml:"xrfc"`
+	ColorSpace string             `yaml:"colorSpace"`
 }
 
 func loadUserSettings(settingsPath *string) UserSettings {

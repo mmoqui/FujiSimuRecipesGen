@@ -59,7 +59,15 @@ func loadCSV(csvPath *string) []*FujiSimulationRecipe {
 		} else if err != nil {
 			log.Fatal(err)
 		}
-		var ccfx = strings.Split(tuple[3], "/")
+		var ccfx []string
+		if len(tuple[3]) == 0 {
+			ccfx = make([]string, 2)
+			ccfx[0] = ""
+			ccfx[1] = ""
+		} else {
+			ccfx = strings.Split(tuple[3], "/")
+		}
+
 		recipes = append(recipes, &FujiSimulationRecipe{
 			Label:          tuple[0],
 			FilmSimulation: tuple[1],

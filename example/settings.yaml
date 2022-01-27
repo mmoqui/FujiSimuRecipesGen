@@ -10,3 +10,6 @@ xrfc:
   version: 1.12.0.0
   # path of the folder into which the FP1 film simulations will be generated
   fp1Path: FP1
+
+# Color space to use in Fujifilm camera: either sRGB or AdobeRGB
+colorSpace: sRGB
