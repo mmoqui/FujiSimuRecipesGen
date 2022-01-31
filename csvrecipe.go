@@ -10,6 +10,7 @@ import (
 	"strings"
 )
 
+// FujiSimulationRecipe defines the structure of a film simulation recipe as read in a CSV document.
 type FujiSimulationRecipe struct {
 	Label          string
 	FilmSimulation string
@@ -28,6 +29,8 @@ type FujiSimulationRecipe struct {
 	ExposureBias   string
 }
 
+// loadCSV loads the CSV document located at the given path and returns an array filled with
+// simulation recipes for each row in the CSV document.
 func loadCSV(csvPath *string) []*FujiSimulationRecipe {
 	fmt.Printf("Load Fujifilm simulation recipes from CSV %s\n", *csvPath)
 	var recipes []*FujiSimulationRecipe

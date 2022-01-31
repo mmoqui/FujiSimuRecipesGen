@@ -1,15 +1,32 @@
-# The Fujifilm camera
-# These parameters are used to feed the film simulation
+#
+# Parameters used to feed the film simulation, independently of the film simulation recipe in CSV.
+#
+
+# Your Fujifilm camera
 camera:
   model: X-T4
-  serialNb: 593536303034201113C58330314721
   firmware: 1.00
 
-# Fujifilm X-Raw Studio
+# X-Raw Fujifilm Camera
+#
+# The in-camera embedded RAW software used to post-process RAW images: the Fujifilm X-Raw Studio
+# software delegates the images processing to this tool in the camera.
+# To know the information below, please connect your camera to the computer so that X-Raw Studio
+# detects it and can use it for post-processing. Then, with the software, register any customized
+# film simulation among your user profile. Then open the generated FP1 file to looking for the
+# data below.
+# The FP1 files are located at:
+# For Windows: C:\Users\<USER>\AppData\Local\com.fujifilm.denji\X_RAW_STUDIO\<YOUR CAMERA MODEL>\<YOUR CAMERA MODEL>_0100
+# FOr MacOSX: /Users/<USER>/Library/Application Support/com.fujifilm.denji/X RAW STUDIO/<YOUR CAMERA MODEL>_0100
 xrfc:
   version: 1.12.0.0
-  # path of the folder into which the FP1 film simulations will be generated
-  fp1Path: FP1
+  serialNb: 593536303034201113C58330314721
 
-# Color space to use in Fujifilm camera: either sRGB or AdobeRGB
+# Path of the folder into which the FP1 film simulations will be generated. They can be generated
+# directly into the location of the film simulation expected by Fujifilm X-Raw Studio:
+# For Windows: C:\Users\<USER>\AppData\Local\com.fujifilm.denji\X_RAW_STUDIO\<YOUR CAMERA MODEL>\<YOUR CAMERA MODEL>_0100
+# FOr MacOSX: /Users/<USER>/Library/Application Support/com.fujifilm.denji/X RAW STUDIO/<YOUR CAMERA MODEL>_0100
+fp1Path: FP1
+
+# Color space to use by default for the generated film simulation: either sRGB or AdobeRGB
 colorSpace: sRGB

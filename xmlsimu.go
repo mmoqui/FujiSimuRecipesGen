@@ -12,6 +12,8 @@ import (
 	"strings"
 )
 
+// FujifilmSimulation the film simulation to generate as XML. The XML grammar follows the FP1 format
+// of the Fujifilm film simulations as expected by a Fujifilm camera.
 type FujifilmSimulation struct {
 	XMLName       xml.Name              `xml:"ConversionProfile"`
 	Application   string                `xml:"application,attr" default:"XRFC"`
@@ -62,17 +64,20 @@ type SimulationProperties struct {
 	DigitalTeleConv        string `xml:"DigitalTeleConv" default:"OFF"`
 }
 
+// generateXMLSimulations generates the film simulations for specified each simulation recipe and
+// from the given user settings. The film simulation will be generated in XML in a FP1 file into the
+// directory specified by the user settings.
 func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRecipe) {
 	var camera = settings.Camera.Model + "_" + flatVersion(settings.Camera.FirmwareVersion)
-	fmt.Printf("The film simulations will be generated into the folder '%s'\n", settings.XRawStudio.FP1Path)
+	fmt.Printf("The film simulations will be generated into the folder '%s'\n", settings.FP1Path)
 	fmt.Printf("Number of film simulation to generate: %d\n", len(recipes))
 
-	createRecursivelyDirectory(settings.XRawStudio.FP1Path)
+	createRecursivelyDirectory(settings.FP1Path)
 
 	for _, recipe := range recipes {
 		fmt.Printf("Generate film simulation %s...", recipe.Label)
 		simulation := &FujifilmSimulation{
-			Version: settings.XRawStudio.Version,
+			Version: settings.Xrfc.Version,
 		}
 		err1 := defaults.Set(simulation)
 		if err1 != nil {
@@ -84,7 +89,7 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 			Device:                 settings.Camera.Model,
 			Version:                camera,
 			Label:                  recipe.Label,
-			SerialNumber:           settings.Camera.SerialNumber,
+			SerialNumber:           settings.Xrfc.SerialNumber,
 			TetherRAWConditionCode: camera,
 			DynamicRange:           recipe.DynamicRange,
 			FilmSimulation:         recipe.FilmSimulation,
@@ -116,7 +121,7 @@ func generateXMLSimulations(settings *UserSettings, recipes []*FujiSimulationRec
 		}
 
 		var fp1Name = normalizeFileName(recipe.Label)
-		var fp1Path = filepath.Join(settings.XRawStudio.FP1Path, fp1Name+".FP1")
+		var fp1Path = filepath.Join(settings.FP1Path, fp1Name+".FP1")
 		err = ioutil.WriteFile(fp1Path, xmlSimulation, 0644)
 		if err != nil {
 			fmt.Println(" FAILED")
